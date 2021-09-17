@@ -237,6 +237,34 @@ body {
 }
 /* End Books */
 
+/* Start Course */
+.course {
+  margin-top: 20px;
+}
+.course h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.course p {
+  font-size: 20px;
+  margin: 10px;
+}
+.course hr {
+  margin: 20px;
+}
+.course h4 {
+  margin: 10px;
+}
+.course ol {
+  margin: 10px 50px 20px;
+}
+.course ol li {
+  padding: 5px;
+  font-size: 20px;
+}
+/* End Course */
+
 /* Start Footer */
 .footer {
   padding: 20px;
