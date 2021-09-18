@@ -5,7 +5,6 @@
   --main-blue: #3f51b5;
   --main-aqua: #00bcd4;
   --main-red: #e91e63;
-  --main-violet: #9c27b0;
 }
 /* End Variables */
 
@@ -16,8 +15,8 @@
   padding: 0;
 }
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: var(--main-white);
+  font-family: "Cairo", sans-serif;
+  /* background-color: var(--main-white); */
 }
 .float-left {
   float: right;
@@ -31,7 +30,19 @@ body {
 .text-center {
   text-align: center;
 }
-.list-un-styled {
+.head {
+  font-size: 40px;
+  margin: 15px;
+  letter-spacing: 2px;
+}
+.paragraph {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 20px;
+  letter-spacing: 1.5px;
+}
+ul,
+ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -73,6 +84,14 @@ body {
   }
 }
 
+@media (min-width: 992px) {
+  .col-md-6 {
+    width: calc(100% / 2 - 10px);
+    margin-left: 10px;
+    float: left;
+  }
+}
+
 .imgWidth {
   max-width: 100%;
 }
@@ -81,8 +100,8 @@ body {
 
 /* Start Header */
 .navbar {
-  padding: 15px 0;
-  background-color: #fff;
+  padding: 10px 0;
+  background-color: #000;
 }
 .navbar .logo {
   font-size: 20px;
@@ -111,28 +130,81 @@ body {
 .navbar .link ul li a {
   text-decoration: none;
   color: var(--main-green);
-  transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -ms-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  padding: 10px;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  padding: 3px 10px;
   border: 1px solid var(--main-green);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: inset 0px 0px 5px 0px var(--main-green);
 }
 .navbar .link ul li a:hover {
   color: #fff;
-  background-color: var(--main-green);
+  /* background-color: var(--main-green); */
+  box-shadow: inset 0px 0px 100px 10px var(--main-green);
 }
 /* End Header */
+
+/* Start Index */
+
+.home {
+  padding: 100px 0 123px;
+}
+.home a {
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--main-green);
+  width: 100px;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid var(--main-green);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  box-shadow: inset 0px 0px 5px 0px var(--main-green);
+}
+.home a:hover {
+  /* background-color: var(--main-green); */
+  box-shadow: inset 0px 0px 100px 10px var(--main-green);
+  color: #fff;
+}
+/* End Index */
+
 /* Start Books */
+.books,
+.bookProgramming {
+  padding: 50px 0;
+}
 .books .itbook,
 .bookProgramming .itbook {
   padding: 10px 20px;
   margin: 15px;
   background-color: var(--main-green);
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
   color: #fff;
+  font-family: "Gluten", cursive;
+  font-weight: 400;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  letter-spacing: 2px;
 }
 .books,
 .bookProgramming {
@@ -141,11 +213,6 @@ body {
 .books .item,
 .bookProgramming .item {
   position: relative;
-  transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
 }
 .books .item img,
 .bookProgramming .item img {
@@ -155,26 +222,16 @@ body {
 .bookProgramming .item div {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: var(--main-aqua);
+  height: 99%;
+  background-color: rgba(0 0 0 / 0.6);
   top: 0;
   left: 0;
   color: #fff;
   display: none;
-  transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
 }
 .books .item:hover div,
 .bookProgramming .item:hover div {
   display: block;
-  transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
 }
 .books .item div h3:nth-child(1),
 .bookProgramming .item div h3:nth-child(1) {
@@ -190,7 +247,7 @@ body {
 .bookProgramming .item div button {
   margin-top: 30px;
   padding: 10px;
-  border: 1px solid var(--main-red);
+  border: 1px solid var(--main-green);
   background-color: transparent;
   transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
@@ -201,12 +258,12 @@ body {
 }
 .books .item div button:hover,
 .bookProgramming .item div button:hover {
-  background-color: var(--main-red);
+  background-color: var(--main-green);
 }
 .books .item div button a,
 .bookProgramming .item div button a {
   text-decoration: none;
-  color: var(--main-red);
+  color: var(--main-green);
   transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -222,53 +279,92 @@ body {
 .bookProgramming .item div a {
   text-decoration: none;
   display: inline-block;
-  border: 1px solid var(--main-blue);
-  padding: 10px;
-  color: var(--main-blue);
-  transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
+  border: 1px solid var(--main-green);
+  padding: 4px 12px;
+  color: var(--main-green);
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  box-shadow: inset 0 0 5px 0 var(--main-green);
 }
 .bookProgramming .item div a:hover {
-  background-color: var(--main-blue);
+  /* background-color: var(--main-green); */
+  box-shadow: inset 0 0 100px 0 var(--main-green);
   color: #fff;
 }
 /* End Books */
 
-/* Start Course */
-.course {
-  margin-top: 20px;
+/* Start Course HTML */
+.html,
+.css,
+.js,
+.sass {
+  padding: 50px 0;
 }
-.course h3 {
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-family: Arial, Helvetica, sans-serif;
+.js {
+  margin-bottom: 20px;
 }
-.course p {
-  font-size: 20px;
+.html h2,
+.css h2,
+.js h2,
+.sass h2 {
+  padding: 5px 10px;
+  background-color: var(--main-green);
+  color: #fff;
+}
+
+.html h2 i,
+.css h2 i,
+.js h2 i,
+.sass h2 i {
+  float: right;
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.html .step,
+.css .step,
+.js .step,
+.sass .step {
+  padding: 20px;
+  box-shadow: 1px 1px 5px 1px rgba(0 0 0 / 0.6);
+  margin: 10px;
+  position: relative;
+  display: none;
+}
+.html .step h3,
+.css .step h3,
+.js .step h3,
+.sass .step h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background-color: var(--main-green);
+  color: #fff;
+}
+.html .step ul,
+.css .step ul,
+.js .step ul,
+.sass .step ul {
+  margin-top: 40px;
+}
+.html .step ul li,
+.css .step ul li,
+.js .step ul li,
+.sass .step ul li {
+  font-size: 18px;
   margin: 10px;
 }
-.course hr {
-  margin: 20px;
-}
-.course h4 {
-  margin: 10px;
-}
-.course ol {
-  margin: 10px 50px 20px;
-}
-.course ol li {
-  padding: 5px;
-  font-size: 20px;
-}
-/* End Course */
+/* End Course HTML */
 
 /* Start Footer */
 .footer {
-  padding: 20px;
-  background-color: var(--main-aqua);
+  padding: 10px;
+  background-color: var(--main-green);
   color: #fff;
   font-size: 18px;
 }
