@@ -70,15 +70,31 @@ ol {
 }
 
 .col-xs-6 {
-  width: calc(100% / 2 - 10px);
   float: left;
   margin-bottom: 10px;
   margin-left: 10px;
 }
-
+@media (min-width: 400px) {
+  .col-xs-6 {
+    width: calc(100% / 2 - 10px);
+  }
+}
+@media (max-width: 399px) {
+  .col-xs-6 {
+    width: calc(100% - 10px);
+  }
+}
 @media (min-width: 992px) {
   .col-md-3 {
-    width: calc(100% / 4 - 10px);
+    width: calc(100% / 5 - 10px);
+    margin-left: 10px;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-sm-3 {
+    width: calc(100% / 3 - 10px);
     margin-left: 10px;
     float: left;
   }
@@ -146,7 +162,6 @@ ol {
 }
 .navbar .link ul li a:hover {
   color: #fff;
-  /* background-color: var(--main-green); */
   box-shadow: inset 0px 0px 100px 10px var(--main-green);
 }
 /* End Header */
@@ -154,10 +169,10 @@ ol {
 /* Start Index */
 
 .home {
-  padding: 100px 0 123px;
+  padding: 100px 0 126px;
 }
 .home a {
-  padding: 10px;
+  padding: 5px;
   font-size: 20px;
   text-decoration: none;
   color: var(--main-green);
@@ -178,7 +193,6 @@ ol {
   box-shadow: inset 0px 0px 5px 0px var(--main-green);
 }
 .home a:hover {
-  /* background-color: var(--main-green); */
   box-shadow: inset 0px 0px 100px 10px var(--main-green);
   color: #fff;
 }
