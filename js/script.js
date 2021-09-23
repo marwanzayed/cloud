@@ -1,3 +1,17 @@
+let icon = document.getElementById("ico");
+let ulEl = document.getElementById("ul");
+
+icon.onclick = function () {
+  icon.classList.toggle("open");
+  if (icon.classList.contains("open") === true) {
+    ulEl.style.display = "block";
+  } else {
+    ulEl.style.display = "none";
+  }
+};
+
+/*************************************************************************** */
+
 let html = document.querySelectorAll(".html .step"),
   //
   css = document.querySelectorAll(".css .step"),
@@ -148,3 +162,5 @@ sassH2.onclick = function () {
   }
   //
 };
+
+/*************************************************************************************************************/

@@ -112,6 +112,12 @@ ol {
   max-width: 100%;
 }
 
+.titlePage {
+  background-color: #eee;
+  text-align: center;
+  padding: 20px 0;
+}
+
 /* End Global Rules */
 
 /* Start Header */
@@ -135,6 +141,16 @@ ol {
 }
 .navbar .link {
   float: right;
+  position: relative;
+}
+.navbar .link i {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  cursor: pointer;
+  display: none;
 }
 .navbar .link ul {
   list-style: none;
@@ -163,6 +179,29 @@ ol {
 .navbar .link ul li a:hover {
   color: #fff;
   box-shadow: inset 0px 0px 100px 10px var(--main-green);
+}
+@media (max-width: 767px) {
+  .navbar .link i {
+    display: inline-block;
+  }
+  .navbar .link ul {
+    position: absolute;
+    top: 47px;
+    right: 0px;
+    background-color: #000;
+    border-top: 4px solid var(--main-green);
+    padding: 15px;
+    width: 208px;
+    display: none;
+  }
+  .navbar .link ul li {
+    float: none;
+    margin: 10px;
+  }
+  .navbar .link ul li a {
+    width: 100%;
+    display: inherit;
+  }
 }
 /* End Header */
 
@@ -201,7 +240,7 @@ ol {
 /* Start Books */
 .books,
 .bookProgramming {
-  padding: 50px 0;
+  padding: 10px 0;
 }
 .books .itbook,
 .bookProgramming .itbook {
@@ -320,7 +359,10 @@ ol {
 .js {
   margin-bottom: 20px;
 }
-.html h2,
+.html h2:nth-child(1) {
+  margin-bottom: 30px;
+}
+.html h2:not(.html h2:nth-child(1)),
 .css h2,
 .js h2,
 .sass h2 {
