@@ -1,0 +1,90 @@
+/* Start Variables */
+:root {
+  --main-green: #23a96e;
+}
+/* End Variables */
+
+/******************** Start Search ********************/
+.search {
+  margin-top: 50px;
+}
+.search h1.titlePage {
+  font-size: 30px;
+}
+.search .paragraph {
+  letter-spacing: 0;
+  font-size: 20px;
+  line-height: 2;
+}
+.search .text-center {
+  font-size: 24px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.search .text-center::after {
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: rgb(209, 209, 209);
+  display: block;
+  margin-top: 10px;
+  margin-right: 10%;
+}
+.search ul {
+  font-size: 18px;
+}
+.search ul li p {
+  margin: 10px;
+}
+.search ul li ul {
+  margin: 10px;
+}
+.search ul li ul li {
+  position: relative;
+}
+.search ul li ul li::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-green);
+  display: inline-block;
+  margin-left: 10px;
+}
+.search ul hr {
+  border: 1px solid #00000099;
+  width: 50%;
+  display: block;
+  margin-right: 25%;
+}
+
+/******************** End Search ********************/
+
+/******************** Start Code ********************/
+.code {
+  margin-top: 50px;
+}
+.code h1.titlePage {
+  font-size: 30px;
+}
+.code .paragraph {
+  letter-spacing: 0;
+  font-size: 20px;
+  line-height: 2;
+}
+.code ul li {
+  font-size: 18px;
+}
+.code ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-green);
+  display: inline-block;
+  margin-right: 10px;
+}
+.code ul p {
+  background-color: var(--main-green);
+  padding: 10px;
+  color: #fff;
+}
+/******************** End Code ********************/
