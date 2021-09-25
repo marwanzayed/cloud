@@ -109,7 +109,7 @@ ol {
 }
 
 .imgWidth {
-  max-width: 100%;
+  min-width: 100%;
 }
 
 .titlePage {
@@ -208,7 +208,7 @@ ol {
 /* Start Index */
 
 .home {
-  padding: 100px 0 126px;
+  padding: 100px 0 80px;
 }
 .home a {
   padding: 5px;
@@ -417,11 +417,63 @@ ol {
 }
 /* End Course HTML */
 
-/* Start Footer */
-.footer {
+/* Start Articles */
+.articles {
+  padding: 50px 0;
+}
+.articles .titlePage {
+  margin-bottom: 20px;
+}
+.articles .item {
+  box-shadow: 0px 0px 10px 0px #000;
+  width: calc(100% / 3 - 20px);
+  margin-bottom: 20px;
+  margin-left: 20px;
+  float: left;
+}
+@media (max-width: 767px) {
+  .articles .item {
+    width: 100%;
+    margin-left: 0;
+    float: none;
+  }
+}
+.articles .item div {
+  color: #000;
+}
+.articles .item div h3 {
   padding: 10px;
+}
+.articles .item div p {
+  margin: 10px;
+  font-size: 18px;
+}
+.articles .item div a {
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid var(--main-green);
+  margin: 10px;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  font-size: 18px;
+  color: #000;
+}
+.articles .item div a:hover {
   background-color: var(--main-green);
   color: #fff;
-  font-size: 18px;
+}
+/* End Articles */
+
+/* Start Footer */
+.footer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--main-green);
+  color: #fff;
+  font-size: 20px;
 }
 /* End Footer */
