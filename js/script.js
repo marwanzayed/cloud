@@ -18,7 +18,7 @@ window.addEventListener("load", hideLoading);
 
 function hideLoading() {
   loadingScreen.style.cssText = "opacity: 0;";
-  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
+  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 5000);
 
   document.body.style.overflow = "auto";
 }
