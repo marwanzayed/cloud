@@ -10,6 +10,25 @@ icon.onclick = function () {
   }
 };
 
+/*****************************************************************************/
+
+let btn = document.querySelector("#top");
+
+window.onscroll = function () {
+  if (window.scrollY >= 600) {
+    btn.style.cssText = "opacity: 1; transition: all 0.3s ease-in-out;";
+  } else {
+    btn.style.cssText = "opacity: 0; transition: all 0.3s ease-in-out;";
+  }
+};
+
+btn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 /*************************************************************************** */
 
 let html = document.querySelectorAll(".html .step"),

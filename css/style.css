@@ -477,3 +477,31 @@ ol {
   font-size: 20px;
 }
 /* End Footer */
+
+/* Start Top Div */
+
+.top {
+  position: relative;
+  text-align: center;
+}
+
+.top i {
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  font-size: 20px;
+  background-color: var(--main-green);
+  color: #fff;
+  padding: 10px 18px;
+  /* opacity: 0; */
+}
+
+/* End Top Div */
