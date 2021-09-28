@@ -18,14 +18,14 @@ window.addEventListener("load", hideLoading);
 
 function hideLoading() {
   loadingScreen.style.cssText = "opacity: 0;";
-  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 5000);
-
-  document.body.style.overflow = "auto";
+  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
 }
 
 /*****************************************************************************/
 
 let btn = document.querySelector("#top");
+
+btn.style.opacity = "0";
 
 window.onscroll = function () {
   if (window.scrollY >= 600) {
