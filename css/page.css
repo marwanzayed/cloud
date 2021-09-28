@@ -82,6 +82,13 @@
   display: inline-block;
   margin-right: 10px;
 }
+.code ul li a {
+  text-decoration: none;
+  color: #00f;
+}
+.code ul li a:hover {
+  color: #00f;
+}
 .code ul p {
   background-color: var(--main-green);
   padding: 10px;
