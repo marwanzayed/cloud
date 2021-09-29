@@ -540,6 +540,7 @@ section.loader {
   justify-content: center;
   align-items: center;
   background-color: #eee;
+  z-index: 5555;
 }
 
 section.loader span {
