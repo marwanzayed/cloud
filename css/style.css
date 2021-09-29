@@ -14,6 +14,10 @@
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  overflow-y: hidden;
+}
 body {
   font-family: "Cairo", sans-serif;
 }
@@ -528,53 +532,77 @@ ol {
 
 /* Start Load Page */
 
-.load {
-  width: 100%;
-  height: 100%;
+section.loader {
   position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+section.loader span {
+  position: relative;
+  width: 36px;
+  height: 37px;
+  background: #eaeef0;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: 6px solid #eaeef0;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 15px rgba(0, 0, 0, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+}
+
+section.loader span::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: #e0f2f1;
-  transition: 2s ease-in-out;
-  -webkit-transition: 2s ease-in-out;
-  -moz-transition: 2s ease-in-out;
-  -ms-transition: 2s ease-in-out;
-  -o-transition: 2s ease-in-out;
-  z-index: 55;
-}
-
-.load span {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 5px solid #42a5f5;
-  border-right-color: transparent;
+  width: 100%;
+  height: 100%;
+  background-color: #5c89ff;
   border-radius: 50%;
-  animation: load 3s linear 0s infinite;
-  -webkit-animation: load 3s linear 0s infinite;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(0);
+  animation: animate 3s linear infinite, animateColor 3s linear infinite;
+  animation-delay: calc(var(--i) * 0.2s);
 }
 
-@keyframes load {
-  from {
-    transform: rotateZ(0deg);
-    -webkit-transform: rotateZ(0deg);
-    -moz-transform: rotateZ(0deg);
-    -ms-transform: rotateZ(0deg);
-    -o-transform: rotateZ(0deg);
+@keyframes animate {
+  0%,
+  90.99%,
+  70.00001% {
+    transform: scale(0);
   }
-  to {
-    transform: rotateZ(360deg);
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -ms-transform: rotateZ(360deg);
-    -o-transform: rotateZ(360deg);
+
+  10%,
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animateColor {
+  0% {
+    filte: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  section.loader {
+    transform: rotate(90deg);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  section.loader {
+    transform: rotate(90deg);
   }
 }
 
