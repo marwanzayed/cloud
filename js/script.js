@@ -12,7 +12,7 @@ icon.onclick = function () {
 
 /*************************************************************************** */
 
-let loadingScreen = document.querySelector(".load");
+let loadingScreen = document.querySelector(".loader");
 
 window.addEventListener("load", hideLoading);
 
