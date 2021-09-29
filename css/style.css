@@ -16,7 +16,7 @@
 }
 html,
 body {
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 body {
   font-family: "Cairo", sans-serif;
