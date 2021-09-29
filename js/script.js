@@ -14,7 +14,7 @@ icon.onclick = function () {
 
 let loadingScreen = document.querySelector(".loader");
 
-window.addEventListener("load", hideLoading);
+window.addEventListener("load", setTimeout(hideLoading, 5000));
 
 function hideLoading() {
   loadingScreen.style.cssText = "opacity: 0;";
