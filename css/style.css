@@ -587,7 +587,8 @@ section.loader span::after {
 
 @keyframes animateColor {
   0% {
-    filte: hue-rotate(0deg);
+    filter: hue-rotate(0deg);
+    -webkit-filter: hue-rotate(0deg);
   }
 
   100% {
@@ -595,16 +596,16 @@ section.loader span::after {
   }
 }
 
-@media (max-width: 767px) {
-  section.loader {
-    transform: rotate(90deg);
+/* @media (max-width: 767px) {
+  section.loader span {
+    display: block;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  section.loader {
-    transform: rotate(90deg);
+  section.loader span {
+    display: block;
   }
-}
+} */
 
 /* End Load Page */

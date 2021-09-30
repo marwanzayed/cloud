@@ -31,6 +31,17 @@ btn.onclick = function () {
   });
 };
 
+/*****************************************************************************/
+
+let loadingScreen = document.querySelector(".loader");
+
+window.addEventListener("load", setTimeout(hideLoading, 2000));
+
+function hideLoading() {
+  loadingScreen.style.cssText = "opacity: 0; transition: all 1s ease-in-out;";
+  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
+}
+
 /*************************************************************************** */
 
 let html = document.querySelectorAll(".html .step"),
@@ -185,14 +196,3 @@ sassH2.onclick = function () {
 };
 
 /*************************************************************************************************************/
-
-let loadingScreen = document.querySelector(".loader");
-
-window.addEventListener("load", setTimeout(hideLoading, 2000));
-
-function hideLoading() {
-  loadingScreen.style.cssText = "opacity: 0;";
-  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
-}
-
-/*****************************************************************************/
