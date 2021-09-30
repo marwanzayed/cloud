@@ -12,17 +12,6 @@ icon.onclick = function () {
 
 /*************************************************************************** */
 
-let loadingScreen = document.querySelector(".loader");
-
-window.addEventListener("load", setTimeout(hideLoading, 5000));
-
-function hideLoading() {
-  loadingScreen.style.cssText = "opacity: 0;";
-  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
-}
-
-/*****************************************************************************/
-
 let btn = document.querySelector("#top");
 
 btn.style.opacity = "0";
@@ -196,3 +185,14 @@ sassH2.onclick = function () {
 };
 
 /*************************************************************************************************************/
+
+let loadingScreen = document.querySelector(".loader");
+
+window.addEventListener("load", setTimeout(hideLoading, 2000));
+
+function hideLoading() {
+  loadingScreen.style.cssText = "opacity: 0;";
+  setTimeout(() => (loadingScreen.style.cssText = "display: none;"), 1000);
+}
+
+/*****************************************************************************/
