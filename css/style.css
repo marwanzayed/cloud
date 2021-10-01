@@ -593,10 +593,12 @@ section.loader span::after {
 
   100% {
     filter: hue-rotate(360deg);
+    -webkit-filter: hue-rotate(360deg);
   }
 }
 
-/* @media (max-width: 767px) {
+/* 
+@media (max-width: 767px) {
   section.loader span {
     display: block;
   }
@@ -606,6 +608,7 @@ section.loader span::after {
   section.loader span {
     display: block;
   }
-} */
+} 
+*/
 
 /* End Load Page */
