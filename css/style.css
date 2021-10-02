@@ -1,10 +1,6 @@
 /* Start Variables */
 :root {
-  --main-white: #f2f2f2;
   --main-green: #23a96e;
-  --main-blue: #3f51b5;
-  --main-aqua: #00bcd4;
-  --main-red: #e91e63;
 }
 /* End Variables */
 
@@ -20,12 +16,6 @@ body {
 }
 body {
   font-family: "Cairo", sans-serif;
-}
-.float-left {
-  float: right;
-}
-.float-right {
-  float: left;
 }
 .clearFix {
   clear: both;
@@ -72,53 +62,69 @@ ol {
   }
 }
 
-.col-xs-6 {
-  float: left;
-  margin-bottom: 10px;
-  margin-left: 10px;
+.item {
+  display: flex;
+  flex-wrap: wrap;
 }
-@media (min-width: 400px) {
-  .col-xs-6 {
-    width: calc(100% / 2 - 10px);
-  }
-}
-@media (max-width: 399px) {
-  .col-xs-6 {
-    width: calc(100% - 10px);
-  }
-}
-@media (min-width: 992px) {
-  .col-md-3 {
-    width: calc(100% / 4 - 10px);
-    margin-left: 10px;
-    float: left;
+
+@media (max-width: 767px) {
+  .col {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .col-sm-3 {
-    width: calc(100% / 3 - 10px);
-    margin-left: 10px;
-    float: left;
+@media (min-width: 768px) and (max-width: 900px) {
+  .col {
+    flex: 0 0 calc(33.333333% - 10px);
+    max-width: calc(33.333333% - 10px);
   }
 }
 
-@media (min-width: 992px) {
-  .col-md-6 {
-    width: calc(100% / 2 - 10px);
-    margin-left: 10px;
-    float: left;
+@media (min-width: 901px) {
+  .col {
+    flex: 0 0 calc(25% - 10px);
+    max-width: calc(25% - 10px);
   }
 }
 
 .imgWidth {
-  min-width: 100%;
+  width: 100%;
 }
 
 .titlePage {
   background-color: #eee;
   text-align: center;
   padding: 20px 0;
+}
+
+.titleBook {
+  padding: 10px 20px;
+  margin: 15px;
+  background-color: var(--main-green);
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  font-family: "Fredericka the Great", cursive;
+  font-weight: 400;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  letter-spacing: 2px;
+}
+
+.divider {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.divider > span {
+  display: inline-block;
+  width: 170px;
+  background: var(--main-green);
+  height: 2px;
 }
 
 /* End Global Rules */
@@ -128,38 +134,37 @@ ol {
   padding: 10px 0;
   background-color: #000;
 }
+
+.navbar .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .navbar .logo {
   font-size: 20px;
-  display: inline-block;
 }
 .navbar .logo a {
-  display: inline-block;
   text-decoration: none;
   color: var(--main-green);
   font-weight: bold;
   letter-spacing: 1px;
 }
 .navbar .link {
-  display: inline-block;
-}
-.navbar .link {
-  float: right;
   position: relative;
 }
 .navbar .link i {
   color: #fff;
   font-size: 24px;
-  position: absolute;
-  right: 0;
-  top: 7px;
   cursor: pointer;
   display: none;
 }
 .navbar .link ul {
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navbar .link ul li {
-  float: left;
   margin-right: 10px;
 }
 .navbar .link ul li a {
@@ -189,7 +194,7 @@ ol {
   }
   .navbar .link ul {
     position: absolute;
-    top: 47px;
+    top: 43px;
     right: 0px;
     background-color: #000;
     border-top: 4px solid var(--main-green);
@@ -198,7 +203,6 @@ ol {
     display: none;
   }
   .navbar .link ul li {
-    float: none;
     margin: 10px;
   }
   .navbar .link ul li a {
@@ -241,163 +245,151 @@ ol {
 /* End Index */
 
 /* Start Books */
-.books,
-.bookProgramming {
-  padding: 10px 0;
-}
-.books .itbook,
-.bookProgramming .itbook {
-  padding: 10px 20px;
-  margin: 15px;
-  background-color: var(--main-green);
-  text-align: center;
-  font-size: 26px;
-  color: #fff;
-  font-family: "Fredericka the Great", cursive;
-  font-weight: 400;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  letter-spacing: 2px;
-}
-.books,
-.bookProgramming {
+
+.books {
   margin-top: 50px;
 }
-.books .item,
-.bookProgramming .item {
+
+.books .col {
   position: relative;
+  overflow: hidden;
+  margin: 5px;
 }
-.books .item img,
-.bookProgramming .item img {
-  width: 100%;
-}
-.books .item div,
-.bookProgramming .item div {
+.books .col .mask {
   position: absolute;
-  width: 100%;
-  height: 98%;
-  background-color: rgba(0 0 0 / 0.6);
   top: 0;
   left: 0;
-  color: #fff;
-  display: none;
+  width: 100%;
+  height: 98%;
+  text-align: center;
+  padding-top: 25%;
+  background: rgba(0, 0, 0, 0.5);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in 0.4s;
+  -moz-transition: all 0.3s ease-in 0.4s;
+  -o-transition: all 0.3s ease-in 0.4s;
+  -ms-transition: all 0.3s ease-in 0.4s;
+  transition: all 0.3s ease-in 0.4s;
 }
-.books .item:hover div,
-.bookProgramming .item:hover div {
-  display: block;
-}
-.books .item div h3:nth-child(1),
-.bookProgramming .item div h3:nth-child(1) {
-  margin-top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  margin-bottom: 10px;
-}
-.books .item div button,
-.bookProgramming .item div button {
-  margin-top: 30px;
-  padding: 10px;
-  border: 1px solid var(--main-green);
-  background-color: transparent;
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  cursor: pointer;
-}
-.books .item div button:hover,
-.bookProgramming .item div button:hover {
-  background-color: var(--main-green);
-}
-.books .item div button a,
-.bookProgramming .item div button a {
-  text-decoration: none;
-  color: var(--main-green);
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  font-size: 18px;
-}
-.books .item div button:hover a,
-.bookProgramming .item div button:hover a {
-  text-decoration: none;
+.books .col h4 {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  margin: 20px 40px 0px 40px;
+  -webkit-transform: scale(10);
+  -moz-transform: scale(10);
+  -o-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+  -webkit-transition: all 0.3s ease-in-out 0.1s;
+  -moz-transition: all 0.3s ease-in-out 0.1s;
+  -o-transition: all 0.3s ease-in-out 0.1s;
+  -ms-transition: all 0.3s ease-in-out 0.1s;
+  transition: all 0.3s ease-in-out 0.1s;
   color: #fff;
 }
-.bookProgramming .item div a {
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid var(--main-green);
-  padding: 4px 12px;
-  color: var(--main-green);
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  box-shadow: inset 0 0 5px 0 var(--main-green);
+.books .col p {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transform: scale(10);
+  -moz-transform: scale(10);
+  -o-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+  -webkit-transition: all 0.3s ease-in-out 0.2s;
+  -moz-transition: all 0.3s ease-in-out 0.2s;
+  -o-transition: all 0.3s ease-in-out 0.2s;
+  -ms-transition: all 0.3s ease-in-out 0.2s;
+  transition: all 0.3s ease-in-out 0.2s;
+  color: #fff;
 }
-.bookProgramming .item div a:hover {
-  /* background-color: var(--main-green); */
-  box-shadow: inset 0 0 100px 0 var(--main-green);
+.books .col p a {
+  color: #fff;
+  text-decoration: none;
+}
+.books .col:hover .mask {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.books .col:hover h4 {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -ms-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.books .col:hover p {
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.portfolio-item .mask h4,
+.portfolio-item .mask p {
+  margin: 0;
   color: #fff;
 }
 /* End Books */
 
 /* Start Course HTML */
-.html,
-.css,
-.js,
-.sass {
+.course {
   padding: 50px 0;
 }
-.js {
-  margin-bottom: 20px;
-}
-.html h2:nth-child(1) {
+.course .titlePage {
   margin-bottom: 30px;
+  display: block;
 }
-.html h2:not(.html h2:nth-child(1)),
-.css h2,
-.js h2,
-.sass h2 {
+.course h2 {
   padding: 5px 10px;
   background-color: var(--main-green);
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.html h2 i,
-.css h2 i,
-.js h2 i,
-.sass h2 i {
-  float: right;
+.course h2 i {
   color: rgb(230, 230, 230);
   cursor: pointer;
   margin-top: 10px;
 }
 
-.html .step,
-.css .step,
-.js .step,
-.sass .step {
+.course .step {
   padding: 20px;
   box-shadow: 1px 1px 5px 1px rgba(0 0 0 / 0.6);
   margin: 10px;
   position: relative;
   display: none;
 }
-.html .step h3,
-.css .step h3,
-.js .step h3,
-.sass .step h3 {
+.course .step h3 {
   position: absolute;
   top: 0;
   left: 0;
@@ -405,16 +397,10 @@ ol {
   background-color: var(--main-green);
   color: #fff;
 }
-.html .step ul,
-.css .step ul,
-.js .step ul,
-.sass .step ul {
+.course .step ul {
   margin-top: 40px;
 }
-.html .step ul li,
-.css .step ul li,
-.js .step ul li,
-.sass .step ul li {
+.course .step ul li {
   font-size: 18px;
   margin: 10px;
 }
@@ -423,74 +409,89 @@ ol {
 /* Start Articles */
 .articles {
   padding: 50px 0;
-  margin-bottom: 270px;
 }
-.articles .titlePage {
-  margin-bottom: 20px;
-}
+
 .articles .item {
-  box-shadow: 0px 0px 10px 0px #000;
-  width: calc(100% / 3 - 20px);
-  margin-bottom: 20px;
-  margin-left: 20px;
-  float: left;
-  transition: all 500ms ease-in-out;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
+  margin-top: 50px;
 }
 
-.articles .item:hover {
-  transform: translateY(15px);
-  -webkit-transform: translateY(15px);
-  -moz-transform: translateY(15px);
-  -ms-transform: translateY(15px);
-  -o-transform: translateY(15px);
-}
-
-@media (max-width: 767px) {
-  .articles .item {
-    width: 100%;
-    margin-left: 0;
-    float: none;
-  }
-}
-.articles .item .img {
-  width: 100%;
-  height: 50%;
-}
-
-.articles .item .img img {
-  width: 100%;
-  height: 100%;
-}
-
-.articles .item div h3 {
-  padding: 10px;
-}
-.articles .item div p {
+.articles .col {
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  box-shadow: 0px 0px 8px 0px #333;
+  padding: 20px;
   margin: 10px;
-  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -webkit-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2)
+    ease;
+  -moz-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -ms-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -o-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
 }
-.articles .item div a {
+.articles .col:hover {
+  color: #fff;
+  transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -webkit-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2)
+    ease;
+  -moz-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -ms-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  -o-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+}
+.articles .col::before {
+  content: "";
+  width: 0;
+  height: 0;
+  padding: 25%;
+  background-color: var(--main-green);
+  opacity: 0.8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+  will-change: transform;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  -webkit-transition: transform calc(var(--photoboxAnimationDuration, 0.8s) / 2)
+    ease;
+  -moz-transition: transform calc(var(--photoboxAnimationDuration, 0.8s) / 2)
+    ease;
+  -ms-transition: transform calc(var(--photoboxAnimationDuration, 0.8s) / 2)
+    ease;
+  -o-transition: transform calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
+}
+
+.articles .col:hover::before {
+  transform: translate(-50%, -50%) scale(5);
+  transition-duration: var(--photoboxAnimationDuration, 0.8s);
+  -webkit-transform: translate(-50%, -50%) scale(10);
+  -moz-transform: translate(-50%, -50%) scale(5);
+  -ms-transform: translate(-50%, -50%) scale(5);
+  -o-transform: translate(-50%, -50%) scale(5);
+}
+
+.articles .col a {
+  color: #fff;
   text-decoration: none;
   padding: 10px;
-  border: 1px solid var(--main-green);
-  margin: 10px;
   display: inline-block;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  font-size: 18px;
-  color: #000;
-}
-.articles .item div a:hover {
   background-color: var(--main-green);
-  color: #fff;
+  margin: 15px;
+  border: 1px solid var(--main-green);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
+
+.articles .col a:hover {
+  background-color: transparent;
+  border: 1px solid var(--main-green);
+}
+
 /* End Articles */
 
 /* Start Footer */
@@ -500,6 +501,9 @@ ol {
   background-color: var(--main-green);
   color: #fff;
   font-size: 20px;
+}
+.footer div div {
+  color: #fff;
 }
 /* End Footer */
 
@@ -514,20 +518,49 @@ ol {
   font-weight: bold;
   padding: 6px;
   border-radius: 4px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
   font-size: 20px;
   background-color: var(--main-green);
   color: #fff;
   padding: 10px 18px;
+  animation: top 1s infinite ease-in-out;
+  -webkit-animation: top 1s infinite ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
-
+@keyframes top {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
 /* End Top Div */
 
 /* Start Load Page */
@@ -554,6 +587,10 @@ section.loader span {
   box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
     8px 8px 15px rgba(0, 0, 0, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.1),
     inset -1px -1px 5px rgba(255, 255, 255, 1);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 section.loader span::after {
