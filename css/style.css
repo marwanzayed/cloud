@@ -430,6 +430,14 @@ ol {
   -ms-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
   -o-transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
 }
+
+@media (max-width: 600px) {
+  .articles .col {
+    flex: 0 0 calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+}
+
 .articles .col:hover {
   color: #fff;
   transition: color calc(var(--photoboxAnimationDuration, 0.8s) / 2) ease;
