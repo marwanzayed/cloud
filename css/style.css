@@ -366,6 +366,7 @@ ol {
 .course .titlePage {
   margin-bottom: 30px;
   display: block;
+  background-color: #eee;
 }
 .course h2 {
   padding: 5px 10px;
